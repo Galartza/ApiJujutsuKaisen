@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj",
         "projectName": "ApiJujutsuKaisen",
-        "projectPath": "C:\\Users\\Usuario\\desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\desktop\\ApiJujutsuKaisen\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -42,9 +42,29 @@
               "target": "Package",
               "version": "[7.0.5, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
