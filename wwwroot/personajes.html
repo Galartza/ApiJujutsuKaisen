@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Jujutsu Kaisen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.3.0-web/css/all.min.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav-item">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="personajes.html" class="nav-link">Personajes</a></li>
+                <li><a href="" class="nav-link">Sobre mi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- inicio section -->
+    <section id="personajes" class="container">
+        <h1 class="title-personajes">Personajes</h1>
+        <div id="characterCards" class="row"></div>
+        <div class="container-btn_refresh">
+            <button id="refreshButton" class="btn btn-refresh btn-primary mt-3"><i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i></button>
+        </div>
+    </section>
+
+    <!-- modal -->
+    <div id="characterModal" class="modal custom-modal" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" onclick="cerrarModal()"></button>
+                </div>
+                <div class="modal-body" id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/personajes.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/fontawesome-free-6.3.0-web/js/all.min.js"></script>
+</body>
+</html>

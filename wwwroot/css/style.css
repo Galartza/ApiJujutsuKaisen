@@ -32,3 +32,43 @@ li .nav-link {
     font-size: 1rem;
     font-weight: 600;
 }
+/* Estilos para el fondo oscuro del modal */
+.custom-modal {
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el color y la opacidad */
+}
+#inicio {
+    height: 70rem;
+    width: 100%;
+}
+.title-personajes {
+    text-align: center;
+    margin: 2rem 0;
+}
+ .paragraph-descripcion {
+    text-align: center;
+ }
+ .logo {
+    display: flex;
+    justify-content: center;
+ }
+ .img-logo {
+    background-color: black;
+    margin: 3rem;
+    border-radius: 10px;
+ }
+ .title-list {
+    text-align: center;
+    margin: 3rem 0;
+ }
+.container-btn_refresh {
+    display: flex;
+    justify-content: center;
+}
+#personajes {
+    height: 80rem;
+    width: 100%;
+}
+.btn-refresh {
+    height: 4rem;
+    width: 4rem;
+}

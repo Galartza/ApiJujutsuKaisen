@@ -7,6 +7,8 @@ function obtenerPersonajes() {
         .then(respuesta => respuesta.json())
         .then(data => {
             charactersData = data; // Almacenar los personajes en la variable global
+            mostrarPersonajes(data);
+            mostrarNombres(data);
             return data;
         })
         .catch(error => {
@@ -28,6 +30,23 @@ function mostrarPersonajes(data) {
     data.slice(0, 9).forEach(character => {
         const card = createCharacterCard(character);
         container.appendChild(card);
+    });
+}
+
+function mostrarNombres(names) {
+    const nameList = document.getElementById('nameList');
+    if (!nameList) {
+        console.error('El elemento "nameList" no se encontró en el HTML');
+        return;
+    }
+
+    nameList.innerHTML = '';
+
+    // Crear elementos de la lista para cada nombre
+    names.forEach(character => {
+        const listItem = document.createElement('li');
+        listItem.textContent = character.nombre;
+        nameList.appendChild(listItem);
     });
 }
 
@@ -130,5 +149,26 @@ function cerrarModal() {
         characterModal.style.display = "none";
     }
 }
+
+function obtenerNuevosPersonajes() {
+    obtenerPersonajes()
+        .then(data => {
+            const randomCharacters = obtenerPersonajesAleatorios(data, 9);
+            mostrarPersonajes(randomCharacters);
+            mostrarNombres(randomCharacters);
+        })
+        .catch(error => {
+            console.error("Error al obtener nuevos personajes", error);
+        });
+}
+
+function obtenerPersonajesAleatorios(data, cantidad) {
+    const shuffledCharacters = data.sort(() => Math.random() - 0.5);
+    return shuffledCharacters.slice(0, cantidad);
+}
+
+document.getElementById("refreshButton").addEventListener("click", function() {
+    obtenerNuevosPersonajes();
+});
 
 obtenerPersonajes().then(mostrarPersonajes); // Llamada inicial para obtener los personajes al cargar la página
