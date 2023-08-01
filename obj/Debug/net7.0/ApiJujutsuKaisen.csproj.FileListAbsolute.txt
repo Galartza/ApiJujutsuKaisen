@@ -277,3 +277,4 @@ C:\Users\Usuario\Desktop\ApiJujutsuKaisen\obj\Debug\net7.0\refint\ApiJujutsuKais
 C:\Users\Usuario\Desktop\ApiJujutsuKaisen\obj\Debug\net7.0\ApiJujutsuKaisen.pdb
 C:\Users\Usuario\Desktop\ApiJujutsuKaisen\obj\Debug\net7.0\ApiJujutsuKaisen.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\ApiJujutsuKaisen\obj\Debug\net7.0\ref\ApiJujutsuKaisen.dll
+C:\Users\Usuario\Desktop\ApiJujutsuKaisen\bin\Debug\net7.0\ApiJujutsuKaisen.staticwebassets.runtime.json

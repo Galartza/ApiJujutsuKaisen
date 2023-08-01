@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "9H+Xt97bNnTWT8T6o1lBnknJe68fqTUVFwMl++vhvE4=",
+  "Hash": "im63McgXbzt8B8gQoW7yVYpTP1gHDDiRsXD0kiPxdOg=",
   "Source": "ApiJujutsuKaisen",
   "BasePath": "_content/ApiJujutsuKaisen",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "ApiJujutsuKaisen\\wwwroot",
+      "Source": "ApiJujutsuKaisen",
+      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\",
+      "BasePath": "_content/ApiJujutsuKaisen",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\index.html",
+      "SourceId": "ApiJujutsuKaisen",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\",
+      "BasePath": "_content/ApiJujutsuKaisen",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\js\\personajes.js",
+      "SourceId": "ApiJujutsuKaisen",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\",
+      "BasePath": "_content/ApiJujutsuKaisen",
+      "RelativePath": "js/personajes.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\personajes.js"
+    }
+  ]
 }

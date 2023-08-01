@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Jujutsu Kaisen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav-item">
+                <li><a href="" class="nav-link">Inicio</a></li>
+                <li><a href="" class="nav-link">Personajes</a></li>
+                <li><a href="" class="nav-link">Sobre mi</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- inicio section -->
+    <section id="inicio" class="container">
+        <form onsubmit="event.preventDefault(); buscarPersonaje()" class="mb-3 col-sm-4 m-auto" style="text-align: center;">
+            <label for="searchInput" class="form-label">Buscar personaje por nombre:</label>
+            <input type="text" id="searchInput" class="form-control"">
+            <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+        </form>
+        <div id="characterCards" class="row"></div>
+    </section>
+
+    <!-- modal -->
+    <div id="characterModal" class="modal" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" onclick="cerrarModal()"></button>
+                </div>
+                <div class="modal-body" id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/personajes.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
