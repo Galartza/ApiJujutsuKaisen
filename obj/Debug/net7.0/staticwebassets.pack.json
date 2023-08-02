@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\img\\fondojk.png",
+      "PackagePath": "staticwebassets\\img\\fondojk.png"
+    },
+    {
+      "Id": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\img\\logo-nav.jpg",
+      "PackagePath": "staticwebassets\\img\\logo-nav.jpg"
+    },
+    {
       "Id": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

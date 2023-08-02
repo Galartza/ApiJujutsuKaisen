@@ -3,14 +3,27 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.body {
+    background-color: rgb(96, 59, 145);
+}
 .header{
     width: 100%;
     height: 4rem;
     display: flex;
     align-items: center;
-    background-color: rgb(0, 0, 100);
+    background-color: rgb(28, 0, 65);
     padding: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+    position: fixed;
+    z-index: 999;
+}
+.logo-nav{
+    height: 3rem;
+    width: 8rem;
+}
+.nav-logo{
+    height: 3rem;
+    width: 10rem;
 }
 .nav {
     width: 100%;
@@ -20,9 +33,8 @@
     align-items: center;
 }
 .nav-item {
-    width: 25%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     list-style: none;
     margin-top: .8rem;
@@ -42,19 +54,31 @@ li .nav-link {
 }
 .title-personajes {
     text-align: center;
-    margin: 2rem 0;
+    margin-bottom: 2rem;
 }
  .paragraph-descripcion {
     text-align: center;
+    color: white;
+    font-weight: 600;
+    background-color: rgb(28, 0, 65);
+    padding: 2rem;
+    border-radius: 20px;
+ }
+ .btn-buscar {
+    height: 3rem;
+    width: 6rem;
+    color: white;
+    background-color: rgb(28, 0, 65);
+    border: none;
+    border-radius: 5px;
  }
  .logo {
     display: flex;
     justify-content: center;
  }
  .img-logo {
-    background-color: black;
-    margin: 3rem;
-    border-radius: 10px;
+    filter: drop-shadow(2px 20px 5px  rgba(28, 0, 65, 0.95) );
+    margin: 5rem 0 1rem 0;
  }
  .title-list {
     text-align: center;
@@ -65,8 +89,9 @@ li .nav-link {
     justify-content: center;
 }
 #personajes {
-    height: 80rem;
+    height: 110rem;
     width: 100%;
+    padding: 6rem;
 }
 .btn-refresh {
     height: 4rem;

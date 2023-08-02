@@ -9,10 +9,11 @@
 
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 </head>
-<body>
+<body class="body">
 
     <!-- header -->
     <header class="header">
+        <div class="logo-nav"><a href=""> <img class="nav-logo" src="img/fondojk.png" alt=""></a></div>
         <nav class="nav">
             <ul class="nav-item">
                 <li><a href="" class="nav-link">Inicio</a></li>
@@ -24,19 +25,19 @@
     <!-- inicio section -->
     <section id="inicio" class="container">
         <div class="logo">
-            <img src="img/fondojk.png" class="img-logo" alt="">
+            <img src="img/logo-nav-removebg-preview.png" class="img-logo" alt="">
         </div>
         <p class="paragraph-descripcion">
             En este proyecto personal, logre craer una API web desarrollada con C# .NET y HeidiSQL que se enfoca en los personajes de la serie de anime "Jujutsu Kaisen". 
             La API proporciona información detallada sobre cada personaje, incluyendo su nombre, edad, habilidades y una descripción. 
-            En el front-end, se ha creado una interfaz de usuario mediante HTML y JavaScript, que muestra los datos de los nueve primeros personajes en forma de tarjetas ("cards"), cada una con su imagen y detalles. 
+            En el front-end, se ha creado una interfaz de usuario mediante HTML y JavaScript, que muestra los datos de los personajes en forma de tarjetas ("cards"), cada una con su imagen y detalles. 
             Además, se ha implementado un campo de búsqueda donde el usuario puede ingresar el nombre de un personaje y, al hacer clic en el botón de búsqueda, se mostrará una tarjeta modal con información detallada y una imagen del personaje encontrado. 
             El diseño utiliza la librería Bootstrap para lograr una apariencia atractiva y responsiva.
         </p>
         <form onsubmit="event.preventDefault(); buscarPersonaje()" class="mb-3 col-sm-4 m-auto" style="text-align: center;">
-            <label for="searchInput" class="form-label">Buscar personaje por nombre:</label>
+            <label for="searchInput" class="form-label fw-bold link-light fs-5 mt-3">Buscar personaje por nombre:</label>
             <input type="text" id="searchInput" class="form-control">
-            <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+            <button type="submit" class="btn-buscar mt-3">Buscar</button>
         </form>
         <h3 class="title-list">Aqui tienes un listado de los personajes que puedes buscar para saber más sobre el mismo.</h3>
         <div id="nameList" class="mt-3"></div>

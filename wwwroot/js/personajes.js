@@ -7,8 +7,6 @@ function obtenerPersonajes() {
         .then(respuesta => respuesta.json())
         .then(data => {
             charactersData = data; // Almacenar los personajes en la variable global
-            mostrarPersonajes(data);
-            mostrarNombres(data);
             return data;
         })
         .catch(error => {
@@ -27,26 +25,9 @@ function mostrarPersonajes(data) {
     // Limpia el contenido actual del contenedor para evitar duplicados
     container.innerHTML = '';
 
-    data.slice(0, 9).forEach(character => {
+    data.slice(0, 12).forEach(character => {
         const card = createCharacterCard(character);
         container.appendChild(card);
-    });
-}
-
-function mostrarNombres(names) {
-    const nameList = document.getElementById('nameList');
-    if (!nameList) {
-        console.error('El elemento "nameList" no se encontró en el HTML');
-        return;
-    }
-
-    nameList.innerHTML = '';
-
-    // Crear elementos de la lista para cada nombre
-    names.forEach(character => {
-        const listItem = document.createElement('li');
-        listItem.textContent = character.nombre;
-        nameList.appendChild(listItem);
     });
 }
 
@@ -54,10 +35,10 @@ function createCharacterCard(character) {
     const card = document.createElement("div");
     card.classList.add("col-sm-4");
 
-
     const cardContent = document.createElement("div");
     cardContent.classList.add("card", "mb-3");
     cardContent.style.height = "20rem";
+    cardContent.style.cursor = "pointer";
 
     const image = document.createElement("img");
     image.src = character.rutaImagen;
@@ -67,27 +48,17 @@ function createCharacterCard(character) {
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
 
-    const name = document.createElement("h4");
+    const name = document.createElement("h5");
     name.textContent = character.nombre;
     name.classList.add("card-title");
 
     const age = document.createElement("p");
     age.textContent = `Edad: ${character.edad}`;
     age.classList.add("card-text");
-    age.style.fontWeight = ('600');
 
-    // const abilities = document.createElement("p");
-    // abilities.textContent = `Habilidades: ${character.habilidades}`;
-    // abilities.classList.add("card-text");
-
-    // const description = document.createElement("p");
-    // description.textContent = `Descripción: ${character.descripcion}`;
-    // description.classList.add("card-text");
 
     cardBody.appendChild(name);
     cardBody.appendChild(age);
-    // cardBody.appendChild(abilities);
-    // cardBody.appendChild(description);
 
     cardContent.appendChild(image);
     cardContent.appendChild(cardBody);
@@ -149,26 +120,4 @@ function cerrarModal() {
         characterModal.style.display = "none";
     }
 }
-
-function obtenerNuevosPersonajes() {
-    obtenerPersonajes()
-        .then(data => {
-            const randomCharacters = obtenerPersonajesAleatorios(data, 9);
-            mostrarPersonajes(randomCharacters);
-            mostrarNombres(randomCharacters);
-        })
-        .catch(error => {
-            console.error("Error al obtener nuevos personajes", error);
-        });
-}
-
-function obtenerPersonajesAleatorios(data, cantidad) {
-    const shuffledCharacters = data.sort(() => Math.random() - 0.5);
-    return shuffledCharacters.slice(0, cantidad);
-}
-
-document.getElementById("refreshButton").addEventListener("click", function() {
-    obtenerNuevosPersonajes();
-});
-
 obtenerPersonajes().then(mostrarPersonajes); // Llamada inicial para obtener los personajes al cargar la página

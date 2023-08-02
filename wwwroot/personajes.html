@@ -6,14 +6,14 @@
     <title>Personajes de Jujutsu Kaisen</title>
 
     <link rel="stylesheet" href="css/style.css">
-
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.3.0-web/css/all.min.css">
 </head>
-<body>
+<body class="body">
 
     <!-- header -->
     <header class="header">
+        <div class="logo-nav"><a href=""> <img class="nav-logo" src="img/fondojk.png" alt=""></a></div>
         <nav class="nav">
             <ul class="nav-item">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
@@ -24,11 +24,13 @@
     </header>
 
     <!-- inicio section -->
-    <section id="personajes" class="container">
+    <section id="personajes">
         <h1 class="title-personajes">Personajes</h1>
         <div id="characterCards" class="row"></div>
         <div class="container-btn_refresh">
-            <button id="refreshButton" class="btn btn-refresh btn-primary mt-3"><i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i></button>
+            <button id="refreshButton" class="btn btn-refresh btn-primary mt-3" onclick="obtenerNuevosPersonajes()">
+                <i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i>
+            </button>
         </div>
     </section>
 
