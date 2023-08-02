@@ -13,12 +13,12 @@
 
     <!-- header -->
     <header class="header">
-        <div class="logo-nav"><a href=""> <img class="nav-logo" src="img/fondojk.png" alt=""></a></div>
+        <div class="logo-nav"><a href="index.html"> <img class="nav-logo" src="img/fondojk.png" alt=""></a></div>
         <nav class="nav">
             <ul class="nav-item">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="personajes.html" class="nav-link">Personajes</a></li>
-                <li><a href="" class="nav-link">Sobre mi</a></li>
+                <li><a href="#aboutme" class="nav-link">Sobre mi</a></li>
             </ul>
         </nav>
     </header>
@@ -27,11 +27,6 @@
     <section id="personajes">
         <h1 class="title-personajes">Personajes</h1>
         <div id="characterCards" class="row"></div>
-        <div class="container-btn_refresh">
-            <button id="refreshButton" class="btn btn-refresh btn-primary mt-3" onclick="obtenerNuevosPersonajes()">
-                <i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i>
-            </button>
-        </div>
     </section>
 
     <!-- modal -->
@@ -46,6 +41,29 @@
             </div>
         </div>
     </div>
+
+      <!-- Footer -->
+  <footer id="aboutme" class="footer">
+    <ul>
+      <div class="linea-footer"></div>
+      <li class="">Web diseñada por Joaquin Galarza &#128512;</li>
+      <li class="redes"> &#128522; Mis redes:
+        <a href="https://www.linkedin.com/in/joaquin-galarza-50753a23a/">
+            <i class="icon fa-brands fa-linkedin" style="color: #ffffff;"></i>
+        </a>
+        <a href="https://github.com/Galartza">
+            <i class="fa-brands fa-github" style="color: #ffffff;"></i>
+        </a>
+        <a href="https://www.instagram.com/joagalarza__/?hl=es-la">
+            <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+        </a>
+        <a href="https://www.facebook.com/joaquin99g">
+            <i class="fa-brands fa-square-facebook" style="color: #ffffff;"></i>
+        </a>
+      </li>
+      <div class="linea-footer"></div>
+    </ul>
+  </footer>
 
     <script src="js/personajes.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>

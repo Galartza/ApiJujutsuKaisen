@@ -25,7 +25,7 @@ function mostrarPersonajes(data) {
     // Limpia el contenido actual del contenedor para evitar duplicados
     container.innerHTML = '';
 
-    data.slice(0, 12).forEach(character => {
+    data.slice(0, 18).forEach(character => {
         const card = createCharacterCard(character);
         container.appendChild(card);
     });

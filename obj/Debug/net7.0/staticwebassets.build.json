@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SwDt+eew4sZyXsx4b3xA1UCRqZId+OGPEsXOA6UeANo=",
+  "Hash": "n4R0i4YZiNK1BPAI8n0fX3wWu3LPWm4st2/uIiw86WQ=",
   "Source": "ApiJujutsuKaisen",
   "BasePath": "_content/ApiJujutsuKaisen",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\fondojk.png"
+    },
+    {
+      "Identity": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\img\\logo-nav-removebg-preview.png",
+      "SourceId": "ApiJujutsuKaisen",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\",
+      "BasePath": "_content/ApiJujutsuKaisen",
+      "RelativePath": "img/logo-nav-removebg-preview.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo-nav-removebg-preview.png"
     },
     {
       "Identity": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\wwwroot\\img\\logo-nav.jpg",

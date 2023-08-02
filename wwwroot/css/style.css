@@ -1,17 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap');
+:root {
+    --lilaOscuro: #10002b;
+    --lila: #3c096c;
+    --lilaClaro: #7b2cbf;
+    --ligth: #f2f2f2; 
+}
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 .body {
-    background-color: rgb(96, 59, 145);
+    background-color: var(--lilaClaro);
+    font-family: 'M PLUS 1p', sans-serif;
 }
+/* ------- header ------- */
 .header{
     width: 100%;
     height: 4rem;
     display: flex;
     align-items: center;
-    background-color: rgb(28, 0, 65);
+    background-color: var(--lilaOscuro);
     padding: 2rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
     position: fixed;
@@ -40,9 +49,13 @@
     margin-top: .8rem;
 }
 li .nav-link {
-    color: white;
+    color: var(--ligth);
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+li .nav-link:hover {
+    color: var(--lilaClaro);
 }
 /* Estilos para el fondo oscuro del modal */
 .custom-modal {
@@ -52,25 +65,24 @@ li .nav-link {
     height: 70rem;
     width: 100%;
 }
-.title-personajes {
-    text-align: center;
-    margin-bottom: 2rem;
-}
  .paragraph-descripcion {
     text-align: center;
-    color: white;
-    font-weight: 600;
-    background-color: rgb(28, 0, 65);
+    color: var(--ligth);
+    font-weight: 400;
+    background-color: var(--lila);
     padding: 2rem;
     border-radius: 20px;
  }
  .btn-buscar {
     height: 3rem;
     width: 6rem;
-    color: white;
-    background-color: rgb(28, 0, 65);
+    color: var(--ligth);
+    background-color: var(--lila);
     border: none;
     border-radius: 5px;
+ }
+ .btn-buscar:hover {
+    background-color: var(--lilaOscuro);
  }
  .logo {
     display: flex;
@@ -81,19 +93,57 @@ li .nav-link {
     margin: 5rem 0 1rem 0;
  }
  .title-list {
+    color: var(--ligth);
+    font-weight: 100;
     text-align: center;
     margin: 3rem 0;
  }
-.container-btn_refresh {
-    display: flex;
-    justify-content: center;
-}
+/* ------- section personajes ------ */
 #personajes {
-    height: 110rem;
+    height: 150rem;
     width: 100%;
     padding: 6rem;
 }
-.btn-refresh {
-    height: 4rem;
-    width: 4rem;
+.title-personajes {
+    font-weight: 400;
+    color: var(--ligth);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: underline;
+}
+.card{
+    background-color: var(--ligth);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+}
+.card:hover {
+    background-color: var(--lila);
+    color: var(--ligth);
+}
+.footer {
+    height: 6rem;
+    width: 100%;
+    background-color: var(--lilaOscuro);
+    color: var(--ligth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer ul li {
+    list-style: none;
+}
+
+.linea-footer {
+    height: 1px;
+    width: 100%;
+    background-color: var(--ligth);
+    margin-top: 1rem;
+
+}
+.redes a{
+    text-decoration: none;
+    font-size: 1.5rem;
 }
