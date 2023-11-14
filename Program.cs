@@ -1,6 +1,6 @@
-
 using Microsoft.EntityFrameworkCore;
 using ApiJujutsuKaisen.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +25,8 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\Mis cosas\\Mas\\MiniProyectos\\Joaquin Galarza-portafolio\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\Mis cosas\\Mas\\MiniProyectos\\Joaquin Galarza-portafolio\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Mis cosas\\Mas\\MiniProyectos\\Joaquin Galarza-portafolio\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj",
         "projectName": "ApiJujutsuKaisen",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\Mis cosas\\Mas\\MiniProyectos\\Joaquin Galarza-portafolio\\ApiJujutsuKaisen\\ApiJujutsuKaisen.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\ApiJujutsuKaisen\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\Mis cosas\\Mas\\MiniProyectos\\Joaquin Galarza-portafolio\\ApiJujutsuKaisen\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,18 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Auth0.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.5, )"
@@ -62,9 +74,13 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0-rc.2.23479.6, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Jujutsu Kaisen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.3.0-web/css/all.min.css">
+</head>
+<body class="body">
+
+    
+    <!-- header -->
+    <header class="header">
+        <div class="logo-nav"><a href="index.html"> <img class="nav-logo" src="img/fondojk.png" alt=""></a></div>
+        <nav class="nav">
+            <ul class="nav-item">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="personajes.html" class="nav-link">Personajes</a></li>
+                <li><a href="#aboutme" class="nav-link">Sobre mi</a></li>
+                <a class="inicioSesion" href="agregarPj.html">agregar</a>
+            </ul>
+        </nav>
+    </header>
+    
+    
+<body class="container" style="background-color: #adb5bd;" >
+    <h1 class="title">Agrega, Edita y Elimina personajes</h1>
+    <hr>
+
+    <button title="Agrega un nuevo personaje" class="btn btn-primary mb-3" style="font-weight: bold; text-transform: uppercase;" data-bs-toggle="modal" data-bs-target="#agregarProducto">Agregar nuevo personajes    
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon-mas icon-tabler icon-tabler-circle-plus" width="28" height="28" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+            <path d="M9 12l6 0" />
+            <path d="M12 9l0 6" />
+          </svg>
+    </button>
+    <table id="tablaPersonajes" class="table table-light table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center">Id</th>
+                <th>Nombre del personaje</th>
+                <th>Edad</th>
+                <th>Habilidades</th>
+                <th>Descricpion</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+
+        <tbody id="personajesTb"></tbody>
+    </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="agregarPersonaje" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Carga el nuevo personaje</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form action="javascript:void(0);" method="post" class="input-group">
+                            <div class="col-md-12  mb-3">
+                                <input type="text" id="nombre" class="form-control mb-2" placeholder="Nombre del producto">
+                                <input type="number" id="precio" class="form-control" placeholder="Precio del producto">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-group ">
+                                    <div class="input-group-text bg-dark"  style="border: none;">
+                                        <input type="checkbox" id="esNuevo" value="false" class="form-check-input mt-0 ">
+                                    </div>
+                                    <label class="text-light" style="margin-left: 5px;" for="">¿Es nuevo el producto?</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-xmark p-2"></i>Cancelar</i></button>
+                    <button type="button" class="btn btn-success" onclick="AgregarProducto();"><i class="fa-solid fa-check p-2"></i>Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="editarProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Editar Producto</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form action="javascript:void(0);" method="post" class="input-group">
+                            <div class="col-md-12 mb-3">
+                                <input type="number" id="idEditar" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <input type="text" id="nombreEditar" class="form-control mb-2" placeholder="Nombre del producto">
+                                <input type="number" id="precioEditar" class="form-control" placeholder="Precio del producto">
+                                
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-text bg-dark"  style="border: none;">
+                                        <input type="checkbox" id="esNuevoEditar" value="false" class="form-check-input mt-0">
+                                    </div>
+                                    <label class="text-light" style="margin-left: 5px;" for="">¿Esta Finalizada la Tarea?</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-xmark p-2"></i>Cancelar</button>
+                    <button type="button" class="btn btn-success" onclick="EditarProducto();"><i class="fa-solid fa-check p-2"></i>Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = mostrarPersonajes();
+    </script>
+    <script src="js/personajes.js"></script>
+
+
+
+
+</body>
+</html>
