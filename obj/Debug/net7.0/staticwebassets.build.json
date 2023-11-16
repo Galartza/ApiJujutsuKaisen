@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wu+r3paAuPsxV+Q0+hAhs77SlUsD3aIZrtcZ3XVflFo=",
+  "Hash": "8v+/tciRee9buOk0mCt2XLFUnDARjWhmPnl/ZQVdbbg=",
   "Source": "ApiJujutsuKaisen",
   "BasePath": "_content/ApiJujutsuKaisen",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Usuario\\Desktop\\Mis cosas\\Mas\\MiniProyectos\\Joaquin Galarza-portafolio\\ApiJujutsuKaisen\\wwwroot\\js\\jQuery.js",
+      "SourceId": "ApiJujutsuKaisen",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Usuario\\Desktop\\Mis cosas\\Mas\\MiniProyectos\\Joaquin Galarza-portafolio\\ApiJujutsuKaisen\\wwwroot\\",
+      "BasePath": "_content/ApiJujutsuKaisen",
+      "RelativePath": "js/jQuery.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jQuery.js"
     },
     {
       "Identity": "C:\\Users\\Usuario\\Desktop\\Mis cosas\\Mas\\MiniProyectos\\Joaquin Galarza-portafolio\\ApiJujutsuKaisen\\wwwroot\\js\\personajes.js",

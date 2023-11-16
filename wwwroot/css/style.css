@@ -121,7 +121,7 @@ li .nav-link:hover {
  }
 /* ------- section personajes ------ */
 #personajes {
-    height: 150rem;
+    height: 190rem;
     width: 100%;
     padding: 6rem;
 }
@@ -163,4 +163,8 @@ li .nav-link:hover {
 .redes a{
     text-decoration: none;
     font-size: 1.5rem;
+}
+
+.icono-add{
+    padding: 5px;
 }

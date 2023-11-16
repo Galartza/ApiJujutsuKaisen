@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.3.0-web/css/all.min.css">
+
+
+ 
 </head>
-<body class="body">
+<body class="body" style="background-color: #7b2cbf;">
 
     
     <!-- header -->
@@ -25,12 +28,12 @@
         </nav>
     </header>
     
-    
-<body class="container" style="background-color: #adb5bd;" >
+
+
     <h1 class="title">Agrega, Edita y Elimina personajes</h1>
     <hr>
 
-    <button title="Agrega un nuevo personaje" class="btn btn-primary mb-3" style="font-weight: bold; text-transform: uppercase;" data-bs-toggle="modal" data-bs-target="#agregarProducto">Agregar nuevo personajes    
+    <button title="Agrega un nuevo personaje" class="btn btn-primary m-2" style="font-weight: bold; text-transform: uppercase;" data-bs-toggle="modal" data-bs-target="#agregarPersonaje">    
         <svg xmlns="http://www.w3.org/2000/svg" class="icon-mas icon-tabler icon-tabler-circle-plus" width="28" height="28" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
@@ -38,14 +41,16 @@
             <path d="M12 9l0 6" />
           </svg>
     </button>
-    <table id="tablaPersonajes" class="table table-light table-hover">
+
+    <table id="tablaPersonajes" class="table table-light table-hover container">
         <thead class="table-dark">
             <tr>
                 <th class="text-center">Id</th>
-                <th>Nombre del personaje</th>
+                <th>Nombre</th>
                 <th>Edad</th>
                 <th>Habilidades</th>
                 <th>Descricpion</th>
+                <th>Imagen</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
@@ -66,23 +71,21 @@
                     <div class="row">
                         <form action="javascript:void(0);" method="post" class="input-group">
                             <div class="col-md-12  mb-3">
-                                <input type="text" id="nombre" class="form-control mb-2" placeholder="Nombre del producto">
-                                <input type="number" id="precio" class="form-control" placeholder="Precio del producto">
+                                <input type="text" id="nombre" class="form-control mb-2" placeholder="Nombre del personaje">
+                                <input type="number" id="edad" class="form-control mb-2" placeholder="Edad del personaje">
+                                <input type="text" id="habilidades" class="form-control mb-2" placeholder="Habilidades del personaje">
+                                <input type="text" id="descripcion" class="form-control mb-2" placeholder="Descripcion del personaje">
+                                <input type="text" id="imagen" class="form-control mb-2" placeholder="Ruta de imagen del personaje">
                             </div>
                             <div class="col-md-12">
-                                <div class="input-group ">
-                                    <div class="input-group-text bg-dark"  style="border: none;">
-                                        <input type="checkbox" id="esNuevo" value="false" class="form-check-input mt-0 ">
-                                    </div>
-                                    <label class="text-light" style="margin-left: 5px;" for="">¿Es nuevo el producto?</label>
-                                </div>
+                               
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-xmark p-2"></i>Cancelar</i></button>
-                    <button type="button" class="btn btn-success" onclick="AgregarProducto();"><i class="fa-solid fa-check p-2"></i>Guardar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar<i class="icono-add fa-solid fa-xmark" style="padding-left: 10px; font-size: 1.2rem;"></i></button>
+                    <button type="button" class="btn btn-success" onclick="agregarPersonaje();">Guardar<i class="icono-add fa-solid fa-check" style="padding-left: 10px; font-size: 1.2rem;"></i></button>
                 </div>
             </div>
         </div>
@@ -90,12 +93,12 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="editarProducto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        <div class="modal fade" id="editarPersonaje" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-dark">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Editar Producto</h1>
+                    <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Editar Personaje</h1>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -104,36 +107,36 @@
                                 <input type="number" id="idEditar" class="form-control" readonly>
                             </div>
                             <div class="col-md-12 mb-3">
-                                <input type="text" id="nombreEditar" class="form-control mb-2" placeholder="Nombre del producto">
-                                <input type="number" id="precioEditar" class="form-control" placeholder="Precio del producto">
+                                <input type="text" id="nombreEditar" class="form-control mb-2" placeholder="Nombre del personaje">
+                                <input type="number" id="edadEditar" class="form-control mb-2" placeholder="Edad del personaje">
+                                <input type="text" id="habilidadesEditar" class="form-control mb-2" placeholder="Habilidades del personaje">
+                                <input type="text" id="descripcionEditar" class="form-control mb-2" placeholder="Descricpion del personaje">
+                                <input type="text" id="imagenEditar" class="form-control mb-2" placeholder="Ruta de imagendel personaje">
                                 
                             </div>
                             <div class="col-md-12">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-text bg-dark"  style="border: none;">
-                                        <input type="checkbox" id="esNuevoEditar" value="false" class="form-check-input mt-0">
-                                    </div>
-                                    <label class="text-light" style="margin-left: 5px;" for="">¿Esta Finalizada la Tarea?</label>
-                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-xmark p-2"></i>Cancelar</button>
-                    <button type="button" class="btn btn-success" onclick="EditarProducto();"><i class="fa-solid fa-check p-2"></i>Guardar</button>
+                    <button type="button" class="btn btn-success" onclick="EditarPersonaje();"><i class="fa-solid fa-check p-2"></i>Guardar</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        window.onload = mostrarPersonajes();
+        window.onload = mostrarPersonajesT();
     </script>
-    <script src="js/personajes.js"></script>
 
 
 
+<script src="js/jQuery.js"></script>
+<script src="js/personajes.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/fontawesome-free-6.3.0-web/js/all.min.js"></script>
 
 </body>
 </html>

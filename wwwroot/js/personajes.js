@@ -2,17 +2,24 @@
 let charactersData = [];
 
 //Obtener personajes de la API y mostrarlos en el contenedor
-async function obtenerPersonajes() {
-    try {
-        const respuesta = await fetch('https://localhost:7010/api/Personajes');
-        const data = await respuesta.json();
-        charactersData = data; // Almacenar los personajes en la variable global
-        return data;
-    } catch (error) {
-        console.error("No se pudo acceder a la API", error);
-        return [];
-    }
+ async function obtenerPersonajes() {
+     try {
+         const respuesta = await fetch('https://localhost:7010/api/Personajes');
+         const data = await respuesta.json();
+         charactersData = data; // Almacenar los personajes en la variable global
+         return data;
+     } catch (error) {
+         console.error("No se pudo acceder a la API", error);
+         return [];
+     }
 }
+// const obtenerPersonajes = () =>
+//     fetch('https://localhost:7010/api/Personajes')
+//     .then(respuesta => respuesta.json())
+//     .then(data => mostrarPersonajes(data))
+//     .catch(error => console.error("No se pudo acceder a la api.", error));
+
+
 
 function mostrarPersonajes(data) {
     const container = document.getElementById('characterCards');
@@ -24,7 +31,7 @@ function mostrarPersonajes(data) {
     // Limpia el contenido actual del contenedor para evitar duplicados
     container.innerHTML = '';
 
-    data.slice(0, 15).forEach(character => {
+    data.slice(0, 21).forEach(character => {
         const card = createCharacterCard(character);
         container.appendChild(card);
     });
@@ -123,7 +130,7 @@ function cerrarModal() {
     }
 }  
 
-function mostrarPersonajes(data) {
+function mostrarPersonajesT(data) {
     const tbody = document.getElementById ('personajesTb');
     tbody.innerHTML = "";
 
@@ -177,7 +184,7 @@ function mostrarPersonajes(data) {
         let descripcionCompleta = character.descripcion;
 
         // Definir la longitud máxima para mostrar
-        let longitudMaximaDescripcion = 50;
+        let longitudMaximaDescripcion = 70;
 
         // Truncar el texto si es necesario para descripción
         let descripcionVisible = descripcionCompleta.length > longitudMaximaDescripcion
@@ -188,7 +195,42 @@ function mostrarPersonajes(data) {
         tdDescripcion.textContent = descripcionVisible;
 
 
-        
+        let imagen = document.createElement('img');
+        imagen.src = character.rutaImagen;
+        imagen.style.height = "5rem";
+        imagen.style.width = "8rem";
+        let tdImagen = tr.insertCell(5);
+        tdImagen.appendChild(imagen);
+
+        let editar = document.createElement('button');
+        let tdEditar = tr.insertCell(6);
+        editar.title = "Editar producto";
+        editar.style.width = "3.5rem";
+        editar.style.height = "2rem";
+        editar.style.border = "none"; 
+        editar.style.borderRadius = "3px";
+        editar.style.backgroundColor = "#ffee00";
+        editar.setAttribute('onclick', `BuscarValorPersonaje(${character.id})`);
+        tdEditar.appendChild(editar);   
+
+        let iconEditar = document.createElement('i');
+        iconEditar.classList.add('fa-solid', 'fa-pen-to-square');
+        editar.appendChild(iconEditar);
+
+
+        let eliminar = document.createElement('button');
+        let tdEliminar = tr.insertCell(7);
+        tdEliminar.appendChild(eliminar);
+        eliminar.title = "Eliminar producto";
+        eliminar.style.width = "3.5rem";
+        eliminar.style.height = "2rem";
+        eliminar.style.border = "none";
+        eliminar.style.borderRadius = "3px"; 
+        eliminar.style.backgroundColor = "red";
+
+        let iconEliminar = document.createElement('i');
+        iconEliminar.classList.add('fa-solid', 'fa-trash');
+        eliminar.appendChild(iconEliminar);
     })
 }
 
@@ -197,7 +239,8 @@ function agregarPersonaje() {
         nombre: document.getElementById('nombre').value,
         edad: document.getElementById('edad').value,
         habilidades: document.getElementById('habilidades').value,
-        descripcion: document.getElementById('descripcion').value
+        descripcion: document.getElementById('descripcion').value,
+        imagen: document.getElementById('imagen').value,
     }
     fetch('https://localhost:7010/api/Personajes',
         {
@@ -211,11 +254,72 @@ function agregarPersonaje() {
     )
     .then(respuesta => respuesta.json())
     .then(() => {
-        getElementById('nombre').value = "";
+        document.getElementById('nombre').value = "";
+        document.getElementById('edad').value = "";
+        document.getElementById('habilidades').value = "";
+        document.getElementById('descripcion').value = "";
+        document.getElementById('imagen').value = "";
+        $('#agregarPersonaje').modal('hide');
+        obtenerPersonajes();
+    })
+    .catch(error => console.error("No se pudo insertar el nuevo producto", error));
+
+    
+}
+function BuscarValorPersonaje(id) {
+    fetch(`https://localhost:7010/api/Personajes/${id}`,{
+         method: 'GET'
+    })
+    .then(respuesta => respuesta.json())
+    .then( data => 
+    {
+         document.getElementById('idEditar').value = data.id;   
+         document.getElementById('nombreEditar').value = data.nombre;
+         document.getElementById('edadEditar').value = data.edad;
+         document.getElementById('habilidadesEditar').value = data.habilidades;
+         document.getElementById('descripcionEditar').value = data.descripcion;
+         document.getElementById('imagenEditar').value = data.imagen;
+         $('#editarPersonaje').modal('show');
+    })
+    .catch(error => console.error("No se pudo acceder a la api.", error));
+}
+
+function EditarPersonaje() {
+    let id = document.getElementById('idEditar').value;
+    
+    let editarPersonaje = {
+        id: document.getElementById('idEditar').value,
+        nombre: document.getElementById('nombreEditar').value,
+        edad: document.getElementById('edadEditar').value,
+        habilidades: document.getElementById('habilidadesEditar').value,
+        descripcion: document.getElementById('descripcionEditar').value,
+        imagen: document.getElementById('imagenEditar').value
+
     }
 
+    fetch(`https://localhost:7010/api/Personajes/${id}`,
+    {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(editarPersonaje)
+    }
     )
+    .then(() => {
+        document.getElementById('idEditar').value = 0;
+        document.getElementById('nombreEditar').value = "";
+        document.getElementById('edadEditar').value = "";
+        document.getElementById('habilidadesEditar').value = "";
+        document.getElementById('descripcionEditar').value = "";
+        document.getElementById('imagenEditar').value = "";
+        $('#editarPersonaje').modal('hide');
+        obtenerPersonajes();
+    })
+    .catch(error => console.error("No se pudo editar el personaje", error));
 }
 
 
 obtenerPersonajes().then(mostrarPersonajes); // Llamada inicial para obtener los personajes al cargar la página
+obtenerPersonajes().then(mostrarPersonajesT);
